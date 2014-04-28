@@ -10,6 +10,8 @@ function init(){
 	
 	if (!IDMOVIL){
 
+		alert(1);
+
 		IDMOVIL = device.uuid;
 		//cambiar la navegación:
 		$(window).on('hashchange',function(){ 
@@ -26,13 +28,17 @@ function init(){
 		$("#btn_mapa").click(function(){cargarMapa();});
 		$("#btn_lista").click(function(){cargarLista();});
 
+		alert(2);
+
 		Db.conectar();
+		alert(3);
 		Db.existe(db_existe, db_no_existe);
 	}
 }
 
 
 function db_existe(){
+		alert(4);
 	Config.cargar(config_cargado);	
 }
 
@@ -49,8 +55,9 @@ function db_no_existe(){
 }
 
 function config_cargado(){
-
+		alert(5);
 	Idioma.init(Config.get('idioma'));
+		alert(6);
 	actualizarBoton("ahora");
 	actualizarBoton("cerca");
 	$("header").show();
