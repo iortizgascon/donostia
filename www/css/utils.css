@@ -1,0 +1,74 @@
+textarea{width:80%;height:10em}
+select{width:80%;padding:0.7em 0;text-align:center;font-size:1.5em}
+input[type="button"], input[type="submit"]{width:80%;padding:0.5em;text-align:center;font-size:2em}
+.page{
+	width:100%;
+	display:none;
+}
+
+header{display:none}
+
+.loading{
+	background-color:#ffffff;
+	background-image:url(../img/ajax-loader.gif);
+	background-repeat:no-repeat;
+	background-position:center center;
+	width:100%;
+	height:100%;
+	z-index:1000;
+	position:absolute;
+	opacity:0.3;
+	
+	
+	
+}
+
+#marco_dialogo{
+	width:100%;
+	height:100%;
+	display:none;
+	position:absolute;
+	z-index:1000;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#marco_dialogo_contenido{
+	width:80%;
+	margin:3em 0 0 7%;
+	padding:3%;
+	border:2px solid #808080;
+	background-color:#ffffff;
+}
+
+#marco_close{
+	position:absolute;
+	width:3em;
+	height:3em;
+	float:right;
+	top:3em;
+	left:93%;
+	margin:0 0 0 -4em;
+}
+
+.dialogo{
+	display:none;
+}
+
+.volver{
+	display:block;
+	float:left;
+	margin:0.5em 0 0 0.5em;
+	width:2em;
+	height:2em;
+	background-image:url(../img/back.png);
+	background-size:100% 100%;
+}
+
+.btn_ok{
+	display:block;
+	float:right;	
+	width:4em;
+	height:4em;
+	background-image:url(../img/ok.png);
+	background-size:100% 100%;	
+}

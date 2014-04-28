@@ -1,0 +1,223 @@
+html {height: 100%;}
+body{font-size:0.8em;font-family:sans-serif;color:#202020;height:100%}
+a{text-decoration:none;color:#202020;display:block;width:100%;outline:0;padding:0.3em}
+
+a:active{background-color:#3388cc;border:none}
+
+ul{list-style:none;margin:0;padding:0}
+li{margin:0;padding:0}
+
+h1{font-size:1.8em;margin:0.4em 0}
+h2{font-size:1.2em;display:inline}
+h3{font-variant:small-caps;font-weight:normal;font-size:1em;margin:0}
+
+.salto{width:100%;clear:both;}
+
+
+
+#seleccion_idiomas{
+	width:100%;
+	min-height: 100%;
+	display:none;
+	background-color:#3388cc;
+}
+
+#seleccion_idiomas ul{width:80%;padding:8em 0;margin:0 10%}
+#seleccion_idiomas ul li{font-size:2em;margin:4px 0; padding:0.5em 0; background-color:#ffffff;text-align:center;color:#808080}
+
+
+header{
+	background-image:url(../img/fondo_nav.jpg);
+	background-repeat:repeat-x;
+	background-color:#000000;
+	color:#ffffff;
+	height:4em;
+	width:100%
+	
+	overflow:hidden;	
+}
+
+
+header img{max-height:3em;margin:0.5em}
+header #configBtn{float:right;margin-right:0.5em}
+
+ul#nav_main {float:left; width:66%;margin-left:0.4em}
+
+ul#nav_main li{
+	float:left;
+	width:30%;
+	height:2em;
+	line-height:2em;
+	margin:0.5em 0.5%;
+	
+	font-variant:small-caps;
+	font-size:1.2em;
+
+	
+
+}
+
+ul#nav_main li, .boton{
+	border:1px solid #cccccc;
+	text-align:center;
+
+	background: -webkit-linear-gradient(#cccccc, #ededed); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#cccccc, #ededed); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#cccccc, #ededed); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#cccccc, #ededed); /* Standard syntax */
+
+	border-radius:0.4em;
+}
+
+ul#nav_main li.selected, .boton.selected{
+	color:#ffffff;
+	
+	background: -webkit-linear-gradient(#296da4, #2f7ebe); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#296da4, #2f7ebe); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#296da4, #2f7ebe); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#296da4, #2f7ebe); /* Standard syntax */
+}
+
+nav{
+	background-color:#ededed;
+	width:100%;
+	border-width:0 0 1px 0;border-color:#cccccc;border-style:solid
+}
+
+
+
+#mode span {font-size:1.2em;display:inline;padding:0.5em;margin-top:0.5em;background-color:#ffffff;}
+#mode span.selected{background-color:#3388cc;color:#ffffff}
+
+#btn_lista{
+border-top-left-radius:0.5em;
+border-bottom-left-radius:0.5em;
+}
+
+#btn_mapa{
+border-top-right-radius:0.5em;
+border-bottom-right-radius:0.5em;
+}
+
+
+
+#mode {float:right;margin:1em 0.5em 0 0;}
+
+
+.foto_lista{
+	width:30%;
+	height:8em;
+	overflow:hidden;
+	float:left;
+	margin-right:0.4em;
+}
+
+.foto_lista img{ max-width: 100%;}
+
+.zona{font-weight:bold;font-size:1.1em}
+.dist{float:right;font-size:1.2em;color:#808080}
+.destacado{font-weight:bold;background-color:#3388cc;color:#ffffff;padding:0.1em 0.3em}
+
+#lista{clear:both;margin-top:0.5em}
+#lista ul li{
+	display:block;
+	border-color:#cccccc;
+	border-style:solid;
+	border-width:0px 0px 1px 0px;
+	padding:0.2em 0;
+	margin:0;
+}
+
+#lista ul li.mas{text-align:center;height:3em;line-height:3em;padding:0}
+
+#mapa{display:none;width:100%;height:40em}
+
+/*  ************* FICHA ****************  */
+
+#nav_ficha li{
+	display:block;
+	width:25%;
+	padding:0;
+	
+	float:left;
+	text-align:center;
+}
+#nav_ficha li img{max-width:76%}
+#nav_ficha li.selected{background-color:#3388cc;}
+
+
+
+#puntos_main{
+	clear:both;
+	width:40%;
+}
+
+#puntos_valoraciones{
+	clear:both;
+	width:40%;
+}
+
+#puntos_valorar{
+	clear:both;
+	width:50%;
+	float:left;
+}
+
+
+
+#puntos_main img,#puntos_valoraciones img,#puntos_valorar img{width:18%;margin:0 1%;}
+
+#categorias_main{
+	clear:both;
+	width:100%;
+	margin:1em 0;
+	font-weight:bold;
+}
+
+#eventos_main{margin-top:1em}
+#eventos_main li{padding:0.4em}
+#eventos_main li:nth-child(odd) {
+	background-color:#e0e0e0;
+}
+
+#escribir{width:80%;height:3em;line-height:3em;margin:1em 0}
+.valoracion{
+	clear:both;
+	width:80%;	
+	padding-left:10%;
+	margin:1em 0 0.4em;
+	border-width:1px 0;
+	border-style:solid;
+	border-color:#cccccc;
+	background-color:#ededed;
+}
+
+.valoracion h2{margin:0.4em;display:block}
+
+#valoraciones_textos li{padding:0.4em}
+#valoraciones_textos li:nth-child(odd){
+	background-color:#e0e0e0;
+}
+
+#ficha_main h1{line-height:1.8em}
+.nota{
+	float:right;
+	margin:0 0.2em;
+	font-size:1.6em;
+	border:1px solid #cccccc;
+	padding:0.2em;
+}
+
+.imagen_ficha{max-width:90%;margin:0.4em 5%}
+#ficha_main_content h1{margin:0.4em 5%}
+.direccion{margin:0 5%;font-size:1.2em}
+#texto_main{margin:0 5%;font-size:1.2em}
+
+#ficha_main_content{width:100%;min-height:30em}
+
+
+/***************** CONFIG *******************/
+
+#config form{padding:3em 1em;clear:both;}
+
+

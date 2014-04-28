@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+     
+
+        <link rel="stylesheet" href="css/utils.css">
+        <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/idangerous.swiper.css">
+
+
+        <title>Bares y restaurantes de Donostia</title>
+    </head>
+    <body>
+      
+
+<div id="marco_dialogo"><img src="img/close.png" id="marco_close" /><div id="marco_dialogo_contenido"></div></div>
+
+	<div id="seleccion_idiomas">
+		<ul>
+			<li data-language="eu">Euskera</li>
+			<li data-language="es">Español</li>
+			<li data-language="en">English</li>
+			<li data-language="fr">Français</li>
+		</ul>
+	</div>
+
+  	<header>
+	
+	<img id="logo" src="img/logo.png" alt="Logo DSS" class="icon" data-href="#main" />
+	<img id="configBtn" src="img/config.png" alt="Logo DSS"  class="icon" data-href="#config"  />
+	
+	</header>
+
+
+	<!-- ***************** PÁGINA PRINCIPAL -->
+
+	<div class="page" id="main">
+
+		<nav>
+			<ul id="nav_main">
+				<li class="traducir" data-text="ahora" id="btn_ahora"></li>
+				<li class="traducir" data-text="cerca" id="btn_cerca"></li>
+			</ul>
+
+			<div id="mode">
+				 <span data-text="lista" id="btn_lista" class="selected traducir"></span><span id="btn_mapa" class="traducir" data-text="mapa"></span>
+			</div>
+
+			<div class="salto">	</div>
+		</nav>
+	
+
+		<div id="lista"></div>
+		<div id="mapa"></div>
+	</div>
+
+	<!-- FIN PÁGINA PRINCIPAL -->
+
+	<!-- ********* PÁGINA FICHA -->
+
+
+	<div class="page" id="ficha">
+
+		<nav>
+			<ul id="nav_ficha">
+				<li id="f_main" class="selected"><a href="#ficha"><img src="img/menu-ficha/ficha.png" /></a></li>
+				<li id="f_galeria"><a href="#galeria"><img src="img/menu-ficha/camera.png"  /></a>
+				<li id="f_valoraciones"><a href="#valoraciones"><img src="img/menu-ficha/star.png"  /></a>
+				<li id="f_location"><a href="#location"><img src="img/menu-ficha/gmaps.png" /></a>
+	
+			</ul>
+			<div class="salto"></div>
+		</nav>
+
+
+		<div id="ficha_main_content">
+		</div>
+	
+
+	</div>   
+
+
+    <!-- FIN PÁGINA FICHA -->
+	
+<!-- ********* PÁGINA CONFIG -->
+
+
+	<div class="page" id="config">
+		<a class="volver" href="#main"></a>
+
+		<form action="" method="post" >
+
+		<select name="idioma" id="cfg_idioma" >
+			<option value="eu">Euskera</option>
+			<option value="es">Español</option>
+			<option value="en">English</option>
+			<option value="fr">Français</option>		
+
+		</select>
+		<br />		<br />		<br />
+		<input type="submit" value="" class="traducir"  data-text="guardar" data-atributo="value" />
+		<span class="btn_ok" id="guardar_config" /></span>
+		</form>
+
+	</div>   
+
+
+    <!-- FIN PÁGINA CONFIG -->
+
+
+ 	<script src="js/jquery-1.11.0.min.js"></script>           
+	<script type="text/javascript" src="js/db.js"></script>	
+	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/idiomas.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
+	<script type="text/javascript" src="js/mapa.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
+ 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/idangerous.swiper-2.1.min.js"></script>
+
+ 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+   	
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
