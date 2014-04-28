@@ -41,19 +41,17 @@ header{
 header img{max-height:3em;margin:0.5em}
 header #configBtn{float:right;margin-right:0.5em}
 
-ul#nav_main {float:left; width:66%;margin-left:0.4em}
+ul#nav_main {float:left; width:50%;margin-left:0.4em}
 
 ul#nav_main li{
-	float:left;
-	width:30%;
+	float:left;	
 	height:2em;
 	line-height:2em;
 	margin:0.5em 0.5%;
+	padding:0 0.5em;
 	
 	font-variant:small-caps;
 	font-size:1.2em;
-
-	
 
 }
 
@@ -61,21 +59,18 @@ ul#nav_main li, .boton{
 	border:1px solid #cccccc;
 	text-align:center;
 
-	background: -webkit-linear-gradient(#cccccc, #ededed); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#cccccc, #ededed); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#cccccc, #ededed); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#cccccc, #ededed); /* Standard syntax */
-
+	background-image:url(../img/fondo_boton_nav);
+	background-repeat:repeat-x;
+	background-color:#ececec;
 	border-radius:0.4em;
 }
 
 ul#nav_main li.selected, .boton.selected{
 	color:#ffffff;
 	
-	background: -webkit-linear-gradient(#296da4, #2f7ebe); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#296da4, #2f7ebe); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#296da4, #2f7ebe); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#296da4, #2f7ebe); /* Standard syntax */
+	background-image:url(../img/fondo_boton_nav_sel);
+	background-repeat:repeat-x;
+	background-color:#2f7dbd;
 }
 
 nav{
