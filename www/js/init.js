@@ -1,4 +1,4 @@
-$(document).ready(function(){ init();});
+//$(document).ready(function(){ init();});
 
 
 var IDMOVIL=0;
@@ -6,34 +6,30 @@ var URL = "http://donostia.dinamowebs.com/app/";
 
 function init(){
 
-	//solo entramos una vez:
+	alert(1);
+
 	
-	if (!IDMOVIL){
+	//cambiar la navegación:
+	$(window).on('hashchange',function(){ 
+	    navigate("#" + location.hash.slice(1));
+	});
+	//binds:
 
-		alert(1);
+	icons();
+	bindDialogs();
+	$("#marco_close").click(function(){$("#marco_dialogo").hide()});	
+	$("#nav_main li").click(function(){
+		cambiarBtnCfg($(this).attr('id').substring(4));
+	});
+	$("#btn_mapa").click(function(){cargarMapa();});
+	$("#btn_lista").click(function(){cargarLista();});
 
-		IDMOVIL = device.uuid;
-		//cambiar la navegación:
-		$(window).on('hashchange',function(){ 
-		    navigate("#" + location.hash.slice(1));
-		});
-		//binds:
+	alert(2);
 
-		icons();
-		bindDialogs();
-		$("#marco_close").click(function(){$("#marco_dialogo").hide()});	
-		$("#nav_main li").click(function(){
-			cambiarBtnCfg($(this).attr('id').substring(4));
-		});
-		$("#btn_mapa").click(function(){cargarMapa();});
-		$("#btn_lista").click(function(){cargarLista();});
-
-		alert(2);
-
-		Db.conectar();
-		alert(3);
-		Db.existe(db_existe, db_no_existe);
-	}
+	Db.conectar();
+	alert(3);
+	Db.existe(db_existe, db_no_existe);
+	
 }
 
 
