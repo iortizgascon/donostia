@@ -1,5 +1,5 @@
 html {height: 100%;}
-body{font-size:0.8em;font-family:sans-serif;color:#202020;height:100%}
+body{margin:0;font-size:0.8em;font-family:sans-serif;color:#202020;height:100%}
 a{text-decoration:none;color:#202020;display:block;width:100%;outline:0;padding:0.3em}
 
 a:active{background-color:#3388cc;border:none}
@@ -59,7 +59,7 @@ ul#nav_main li, .boton{
 	border:1px solid #cccccc;
 	text-align:center;
 
-	background-image:url(../img/fondo_boton_nav);
+	background-image:url(../img/fondo_boton_nav.png);
 	background-repeat:repeat-x;
 	background-color:#ececec;
 	border-radius:0.4em;
@@ -68,7 +68,7 @@ ul#nav_main li, .boton{
 ul#nav_main li.selected, .boton.selected{
 	color:#ffffff;
 	
-	background-image:url(../img/fondo_boton_nav_sel);
+	background-image:url(../img/fondo_boton_nav_sel.png);
 	background-repeat:repeat-x;
 	background-color:#2f7dbd;
 }

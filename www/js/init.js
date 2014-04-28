@@ -1,22 +1,12 @@
-//$(document).ready(function(){ init();});
+$(document).ready(function(){ init();});
 
 
-var IDMOVIL=0;
+var IDMOVIL=1; //para pruebas
 var URL = "http://donostia.dinamowebs.com/app/";
 
 function init(){
 
-	alert(IDMOVIL);
-
-	//cambiar la navegación:
-	$(window).on('hashchange',function(){ 
-	    navigate("#" + location.hash.slice(1));
-	});
-	//binds:
-
-	icons();
-	bindDialogs();
-	$("#marco_close").click(function(){$("#marco_dialogo").hide()});	
+	init_utils();
 	$("#nav_main li").click(function(){
 		cambiarBtnCfg($(this).attr('id').substring(4));
 	});

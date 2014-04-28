@@ -1,3 +1,15 @@
+function init_utils(){
+//cambiar la navegación:
+	$(window).on('hashchange',function(){ 
+	    navigate("#" + location.hash.slice(1));
+	});
+	//binds:
+
+	icons();
+	triggerContenido("body");
+	$("#marco_close").click(function(){$("#marco_dialogo").hide()});	
+}
+
 
 function ajax(comando, parametros, callback){
 
@@ -7,6 +19,8 @@ function ajax(comando, parametros, callback){
 	//añadir los parametros de configuración
 	objCfg = Config.getConfig();
 	for (var attrname in objCfg) { postData[attrname] = objCfg[attrname]; }
+
+	postData.uuid=IDMOVIL;
 
 
 	var jqxhr = $.ajax({
@@ -47,7 +61,8 @@ function actualizarBoton(id){
 
 function volcarCapa(id, html){
 	$("#" + id).html(html);
-	bindDialogs();
+	triggerContenido("#" + id);
+
 }
 
 function loading(capa, activar){
@@ -72,9 +87,9 @@ function showPage(pagina){
 	$(pagina).show();
 }
 
+function triggerContenido(padre){
 
-function bindDialogs(){
-	$(".btn_dialogo").each(function(){
+	$(padre + " .btn_dialogo").each(function(){
 		$(this).click(function(){
 			id = $(this).attr("data-target");
 			funcion = $(this).attr("data-function");			
@@ -83,5 +98,12 @@ function bindDialogs(){
 			$("#marco_dialogo").show();
 		});
 	});
+
+	$(padre + " .select select").each(function(){
+		$(this).parent().children("span").html($(this).children("option:selected").text());
+		$(this).change(function(){
+			$(this).parent().children("span").html($(this).children("option:selected").text());
+		});
+	});	
 }
 

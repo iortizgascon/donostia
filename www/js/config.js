@@ -1,6 +1,6 @@
 var Config = {
    
-    config:{uuid:1,idioma:'es',ahora:1,cerca:0},
+    config:{idioma:'es',ahora:1,cerca:0},
  
 
     cargar: function (callback) {
@@ -21,6 +21,8 @@ var Config = {
 	
 	//$("#cfg_idioma option[value='"+ this.get("idioma") +"']").attr("selected","selected");
 	$("#cfg_idioma").val("" + this.get("idioma"));
+	$("#cfg_idioma").trigger("change");
+
 	$("#config form").submit(function(event){
 		event.preventDefault();
 		Config.set('idioma',$("#cfg_idioma").val());
