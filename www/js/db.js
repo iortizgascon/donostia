@@ -20,7 +20,7 @@ var Db = {
  
  
 
-    errorCB:function(tx, err) {alert(err);},
+    errorCB:function(tx, err) {alert("Error de almacenamiento");alert(err);},
  
     select:function(sql, cb_exito){	
 	

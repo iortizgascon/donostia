@@ -70,8 +70,8 @@ var Config = {
 	sql[0] = "DROP TABLE IF EXISTS config";
 	sql[1] = "CREATE TABLE config (id unique, valor);";
 	ind=2;
-	for (v in this.config){
-		sql[ind] = "INSERT INTO config (id, valor) VALUES ('" + v + "', '" + this.get(v) + "');";	
+	for (v in Config.config){
+		sql[ind] = "INSERT INTO config (id, valor) VALUES ('" + v + "', '" + Config.get(v) + "');";	
 		ind++;
 	}
 

@@ -1,4 +1,4 @@
-$(document).ready(function(){ init();});
+//$(document).ready(function(){ init();});
 
 
 var IDMOVIL=1; //para pruebas
