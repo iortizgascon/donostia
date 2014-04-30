@@ -2,7 +2,6 @@ textarea{width:80%;height:10em}
 
 
 .select{
-	font-size:1.5em;
 	position:relative;
 	display:inline-block;
 	width:80%;
@@ -14,6 +13,7 @@ textarea{width:80%;height:10em}
 	background-repeat:no-repeat;
 	background-position:right center;
 	background-size:auto 80%;
+	border-radius:0.5em;
 	
 }
 .select span{
@@ -31,7 +31,26 @@ textarea{width:80%;height:10em}
 	z-index:10;
 }
 
+.si_no{
+	
+	width:8em;
+	display:inline-block;
+	vertical-align:middle;
+	height:2.5em;
+	line-height:2.5em;
+	border-radius:0.4em;
+	overflow:hidden;
+}
 
+.si_no span{
+	width:50%;
+	display:block;
+	float:left;
+	height:100%;
+	background-color:#ededed;
+	text-align:center;
+}
+.si_no span.selected{background-color:#3388cc;color:#ffffff}
 
 input[type="button"], input[type="submit"]{width:80%;padding:0.5em;text-align:center;font-size:2em}
 .page{

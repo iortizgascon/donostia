@@ -3,15 +3,12 @@ $(document).ready(function(){ init();});
 
 var IDMOVIL=1; //para pruebas
 var URL = "http://donostia.dinamowebs.com/app/";
+var PRIMERAVEZ=false;
 
 function init(){
 
 	init_utils();
-	$("#nav_main li").click(function(){
-		cambiarBtnCfg($(this).attr('id').substring(4));
-	});
-	$("#btn_mapa").click(function(){cargarMapa();});
-	$("#btn_lista").click(function(){cargarLista();});
+	init_main();
 
 	Db.conectar();
 	Db.existe(db_existe, db_no_existe);
@@ -24,6 +21,7 @@ function db_existe(){
 }
 
 function db_no_existe(){
+	PRIMERAVEZ = true;
 	//mostrar idioma
 	$("#seleccion_idiomas").show();
 
@@ -31,9 +29,11 @@ function db_no_existe(){
 	$("#seleccion_idiomas ul li").click(function(){
 		Config.config.idioma = $(this).attr("data-language");
 		$("#seleccion_idiomas").hide();
-		Config.crear(config_cargado);
+		Config.crear(db_existe);
 	});
 }
+
+
 
 function config_cargado(){
 		
@@ -41,8 +41,14 @@ function config_cargado(){
 	actualizarBoton("ahora");
 	actualizarBoton("cerca");
 	$("header").show();
-	showPage("#main");
-	cargarMain();
+		
+	if (PRIMERAVEZ){
+		showPage("#config");
+		cargarConfig();
+	}else{
+		showPage("#main");
+		Lista.cargar();
+	}
 }
 
 

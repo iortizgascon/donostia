@@ -1,6 +1,6 @@
 html {height: 100%;}
 body{margin:0;font-size:0.8em;font-family:sans-serif;color:#202020;height:100%}
-a{text-decoration:none;color:#202020;display:block;width:100%;outline:0;padding:0.3em}
+a{text-decoration:none;color:#202020;display:block;width:100%;outline:0;}
 
 a:active{background-color:#3388cc;border:none}
 
@@ -12,6 +12,10 @@ h2{font-size:1.2em;display:inline}
 h3{font-variant:small-caps;font-weight:normal;font-size:1em;margin:0}
 
 .salto{width:100%;clear:both;}
+
+#config{font-size:1.5em;text-align:center}
+.opcionesConfig{width:100%}
+.opcionesConfig li{text-align:left;margin:1em}
 
 
 
@@ -81,6 +85,7 @@ nav{
 
 
 
+
 #mode span {font-size:1.2em;display:inline;padding:0.5em;margin-top:0.5em;background-color:#ffffff;}
 #mode span.selected{background-color:#3388cc;color:#ffffff}
 
@@ -92,6 +97,16 @@ border-bottom-left-radius:0.5em;
 #btn_mapa{
 border-top-right-radius:0.5em;
 border-bottom-right-radius:0.5em;
+}
+
+.error_conn{
+	display:none;
+	height:3em;
+	line-height:3em;
+	text-align:center;
+	width:100%;
+	background-color:#ffeded;
+	color:#800000;
 }
 
 
@@ -110,7 +125,7 @@ border-bottom-right-radius:0.5em;
 .foto_lista img{ max-width: 100%;}
 
 .zona{font-weight:bold;font-size:1.1em}
-.dist{float:right;font-size:1.2em;color:#808080}
+.dist{float:right;margin-right:0.3em;font-size:1.2em;color:#808080}
 .destacado{font-weight:bold;background-color:#3388cc;color:#ffffff;padding:0.1em 0.3em}
 
 #lista{clear:both;margin-top:0.5em}
@@ -129,11 +144,22 @@ border-bottom-right-radius:0.5em;
 
 /*  ************* FICHA ****************  */
 
+
+
+.foto{
+	border:solid #cccccc 1px;
+	width:95%;
+	padding:1%;
+	margin:auto;
+}
+
+.foto img{max-width:100%}
+
+
 #nav_ficha li{
 	display:block;
 	width:25%;
-	padding:0;
-	
+	padding:0;	
 	float:left;
 	text-align:center;
 }
@@ -178,7 +204,7 @@ border-bottom-right-radius:0.5em;
 #escribir{width:80%;height:3em;line-height:3em;margin:1em 0}
 .valoracion{
 	clear:both;
-	width:80%;	
+	width:90%;	
 	padding-left:10%;
 	margin:1em 0 0.4em;
 	border-width:1px 0;
@@ -198,12 +224,11 @@ border-bottom-right-radius:0.5em;
 .nota{
 	float:right;
 	margin:0 0.2em;
-	font-size:1.6em;
-	border:1px solid #cccccc;
+	font-size:1.6em;	
 	padding:0.2em;
 }
 
-.imagen_ficha{max-width:90%;margin:0.4em 5%}
+
 #ficha_main_content h1{margin:0.4em 5%}
 .direccion{margin:0 5%;font-size:1.2em}
 #texto_main{margin:0 5%;font-size:1.2em}

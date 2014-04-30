@@ -1,14 +1,37 @@
 var Config = {
    
-    config:{idioma:'es',ahora:1,cerca:0},
+    config:{idioma:'es',ahora:1,cerca:0,descuentos:1,restaurantes:1,conciertos:1},
  
 
     cargar: function (callback) {
         Db.select("SELECT id, valor FROM config",
 		function(rs){
+			
+			//cojo todos los campos de config
+			campos={}
+			for (campo in Config.config){
+				campos[campo] = 1;
+			}
 			var len = rs.rows.length;
-				for (var i=0; i<len; i++)
-					Config.config[rs.rows.item(i).id] = rs.rows.item(i).valor;
+			for (var i=0; i<len; i++){
+				Config.config[rs.rows.item(i).id] = rs.rows.item(i).valor;
+				campos[rs.rows.item(i).id] = 0; //campo guardado
+			}
+
+			//campos sin guardar
+			ind = 0;
+			sql = new Array();
+			for (campo in Config.config){
+				if (campos[campo]){
+					//insertarlo en la BD.
+					sql[ind] = "INSERT INTO config (id, valor) VALUES ('" + campo + "', '" + Config.get(campo) + "');";
+					ind++;
+				}
+			}
+			if (ind){
+				Db.queryArray(sql,function(){});
+			}
+			
 			Config.inicializar_form_config();	
 			callback();
 		} 
@@ -16,20 +39,27 @@ var Config = {
 
     },
 
- inicializar_form_config:function(){
+    inicializar_form_config:function(){
 
 	
 	//$("#cfg_idioma option[value='"+ this.get("idioma") +"']").attr("selected","selected");
 	$("#cfg_idioma").val("" + this.get("idioma"));
 	$("#cfg_idioma").trigger("change");
 
-	$("#config form").submit(function(event){
-		event.preventDefault();
+	$("#cfg_idioma").change(function(){
 		Config.set('idioma',$("#cfg_idioma").val());
 		Idioma.init(Config.get('idioma'));
-
-		$("#guardar_config").show();
 	});
+
+	$("#cfg_descuentos").attr('data-config', "descuentos");
+	set_si_no('cfg_descuentos',Config.get("descuentos"));
+
+	$("#cfg_restaurantes").attr('data-config', "restaurantes");
+	set_si_no('cfg_restaurantes',Config.get("restaurantes"));
+
+	$("#cfg_conciertos").attr('data-config', "conciertos");
+	set_si_no('cfg_conciertos',Config.get("conciertos"));
+	
 
     },
   

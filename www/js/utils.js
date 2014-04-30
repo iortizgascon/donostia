@@ -11,7 +11,7 @@ function init_utils(){
 }
 
 
-function ajax(comando, parametros, callback){
+function ajax(comando, parametros, callback, callbackError){
 
 	postData = parametros;	
 	postData.cmd=comando;
@@ -36,7 +36,9 @@ function ajax(comando, parametros, callback){
 		}
 	  })
 	  .fail(function(jqXHR, textStatus, errorThrown) {
-	    alert(textStatus);
+		console.log(textStatus);
+		if (typeof callbackError != 'undefined')
+		    	callbackError();
 	  });
 }
 
@@ -104,6 +106,34 @@ function triggerContenido(padre){
 		$(this).change(function(){
 			$(this).parent().children("span").html($(this).children("option:selected").text());
 		});
-	});	
+	});
+
+
+	$(padre +" .si_no").each(function(){
+		
+		if (!$(this).html())
+			$(this).html('<span class="traducir si" data-value="1" data-text="si"></span><span class="traducir no" data-value="0" data-text="no"></span>');
+
+		$(this).children("span").click(function(){
+			valor = $(this).attr('data-value');
+			id = $(this).parent().attr('id');
+			set_si_no(id,valor);
+			config_name = $(this).parent().attr('data-config');
+			Config.set(config_name,valor);
+		});
+	});
 }
+
+
+
+function set_si_no(id,valor){
+
+	if (valor=="1") span = $("#" + id + " span.si");
+	else span = $("#" + id + " span.no");
+
+	$("#" + id + " span").removeClass("selected");
+	$(span).addClass("selected");
+	
+}
+
 
