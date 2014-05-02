@@ -136,4 +136,15 @@ function set_si_no(id,valor){
 	
 }
 
+function bind_escribirTexto(){
+	
+	$("#marco_dialogo_contenido input[type='button']").click(function(){
+		texto = $("#marco_dialogo_contenido textarea").val();
+		if (texto) texto = escape(texto);
+		ajax("votar",{nota:-1,local:Ficha.fichas[Ficha.fichaActual].idLocal,texto:texto},Ficha.callback_votar);
+		loading("marco_dialogo_contenido",true);
+	});
+}
+
+
 

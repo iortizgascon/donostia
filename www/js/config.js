@@ -49,6 +49,7 @@ var Config = {
 	$("#cfg_idioma").change(function(){
 		Config.set('idioma',$("#cfg_idioma").val());
 		Idioma.init(Config.get('idioma'));
+		Ficha.vaciar();
 	});
 
 	$("#cfg_descuentos").attr('data-config', "descuentos");

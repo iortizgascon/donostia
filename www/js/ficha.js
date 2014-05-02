@@ -3,7 +3,15 @@ var Ficha = {
 	fichaActual:0,
  
 
-	cargarDatos: function(){			
+	
+	vaciar:function(){
+		this.fichas = {};
+		
+	},
+
+
+	cargarDatos: function(){	
+		loading("ficha_main_content",true);		
 		ajax("ficha",{ficha:Ficha.fichaActual},Ficha.callback_ficha, Ficha.error);
 	},
 
@@ -11,6 +19,7 @@ var Ficha = {
 		Ficha.fichaActual = data.idLocal;
 		Ficha.fichas[Ficha.fichaActual] = data;
 		Ficha.cargarFicha();
+		loading("ficha_main_content",false);
 	},
 
 	error: function(){
@@ -23,20 +32,26 @@ var Ficha = {
 	cargarFicha: function(id){	
 		if (typeof id != 'undefined') Ficha.fichaActual=id;
 
-		$("#ficha_main_content").html("");
-		loading("ficha_main_content",true);
-		if (Ficha.fichaActual in Ficha.fichas) {
-			pestanaFicha("f_main");
-			volcarCapa("ficha_main_content", Ficha.fichas[Ficha.fichaActual].ficha);
-			loading("ficha_main_content",false);
-		}else{
+		$("#ficha_main_content").html("");		
+		
 
+		if (!(Ficha.fichaActual in Ficha.fichas)) {	
 			Ficha.cargarDatos();
-		}			
+			return;		
+		}
+		pestanaFicha("f_main");
+		volcarCapa("ficha_main_content", Ficha.fichas[Ficha.fichaActual].ficha);			
+	
 	},
 
 	
 	cargarGaleria: function(){
+		if (!(Ficha.fichaActual in Ficha.fichas)) {
+			document.location.href="#ficha";	
+			//Ficha.cargarDatos();
+			return;		
+		}
+
 		pestanaFicha("f_galeria");
 
 		html = '<div class="swiper-container">\n';
@@ -60,6 +75,12 @@ var Ficha = {
 	},
 	
 	cargarValores: function(){
+		if (!(Ficha.fichaActual in Ficha.fichas)) {	
+			document.location.href="#ficha";	
+			//Ficha.cargarDatos();
+			return;		
+		}
+
 		pestanaFicha("f_valoraciones");
 		volcarCapa("ficha_main_content", Ficha.fichas[Ficha.fichaActual].valores);	
 		$("#puntuar").change(function(){
@@ -84,26 +105,27 @@ var Ficha = {
 	},
 
 	cargarLocation: function(){
+		if (!(Ficha.fichaActual in Ficha.fichas)) {	
+			document.location.href="#ficha";	
+			//Ficha.cargarDatos();
+			return;		
+		}
+
 		pestanaFicha("f_location");
 	
-		var puntos = [];
-		puntos[0] = {lat:Ficha.fichas[Ficha.fichaActual].latitud,
+		
+		puntos= {0:{lat:Ficha.fichas[Ficha.fichaActual].latitud,
 			 lon:Ficha.fichas[Ficha.fichaActual].longitud,
 			 titulo:Ficha.fichas[Ficha.fichaActual].titulo,
-			 html:Ficha.fichas[Ficha.fichaActual].titulo + " (" + Ficha.fichas[Ficha.fichaActual].nota + "/10)"};
+			 html:Ficha.fichas[Ficha.fichaActual].titulo}};
 
-		pintarMapa("ficha_main_content", Ficha.fichas[Ficha.fichaActual].latitud, Ficha.fichas[Ficha.fichaActual].longitud, 15, puntos);
-	},
+		centro={lat:Ficha.fichas[Ficha.fichaActual].latitud,
+			 lon:Ficha.fichas[Ficha.fichaActual].longitud}
 
-	bind_escribirTexto: function(){
-	
-		$("#marco_dialogo_contenido input[type='button']").click(function(){
-			texto = $("#marco_dialogo_contenido textarea").val();
-			if (texto) texto = escape(texto);
-			ajax("votar",{nota:-1,local:Ficha.fichas[Ficha.fichaActual].idLocal,texto:texto},Ficha.callback_votar);
-			loading("marco_dialogo_contenido",true);
-		});
+		
+		Mapa.pintarMapa("ficha_main_content", centro, 15, puntos);
+		
 	}
-
+	
 }
 

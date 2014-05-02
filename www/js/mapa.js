@@ -1,10 +1,12 @@
 var Mapa={
 
-	puntos:{},
-	centro:{lat:43.316510,lon:-1.9732},
+	map:{},
+	puntos_lista:{},
+	centro_ciudad:{lat:43.316510,lon:-1.9732},
 
-	setPuntos:function(p){
-		Mapa.puntos=p;
+
+	setPuntos:function(puntos){
+		Mapa.puntos_lista=puntos;
 	},
 
 	getGeo: function(geoLocExito, geoLocError){
@@ -12,41 +14,49 @@ var Mapa={
 	},
 
 
-
-	pintarMapa: function(capa, zoom){
+	mapaLista: function(capa, zoom){
 	
-			 
-			var mapOptions = {
-			    zoom: zoom,
-			    center: new google.maps.LatLng(Mapa.centro.lat,Mapa.centro.lon)
-			  }
-			  var map = new google.maps.Map(document.getElementById(capa), mapOptions);
-			var bounds = new google.maps.LatLngBounds();
+		Mapa.pintarMapa(capa, Mapa.centro_ciudad, zoom, Mapa.puntos_lista);
 
-			for (var ind in Mapa.puntos) {
-				punto = Mapa.puntos[ind];
-			 	 var infowindow = new google.maps.InfoWindow({
+	},
+
+	pintarMapa: function(capa, centro, zoom, puntos){
+			
+
+			mapOptions = {
+			    zoom: zoom,
+			    center: new google.maps.LatLng(centro.lat,centro.lon)
+			  }
+			this.map = new google.maps.Map(document.getElementById(capa), mapOptions);
+			bounds = new google.maps.LatLngBounds();
+
+			
+			for (var ind in puntos) {
+				punto = puntos[ind];
+			 	 infowindow = new google.maps.InfoWindow({
 				      content: punto.html
 				  });
 				elPunto = new google.maps.LatLng(punto.lat,punto.lon);
-				  var marker = new google.maps.Marker({
+				  marker = new google.maps.Marker({
 				      position:  elPunto,
-				      map: map,
+				      map: this.map,
 				      title: punto.titulo
 				  });
-				Mapa.addList(map, marker,infowindow);		
+				Mapa.addList(marker,infowindow);		
 				bounds.extend(elPunto);
 
 			}
-			var span = bounds.toSpan();
+
+
+			span = bounds.toSpan();
 			if (span.lat() > 0.0001 && span.lng() > 0.0001) {
-				map.fitBounds(bounds);	
+				Mapa.map.fitBounds(bounds);	
 			}
 	},
 
-	addList:function(map, marker,infowindow){
+	addList:function(marker,infowindow){
 	  	google.maps.event.addListener(marker, 'click', function() {
-		    infowindow.open(map,marker);
+		    infowindow.open(this.map,marker);
 		  });
 	}
 

@@ -68,7 +68,9 @@ function cargarConfig(){
 function cargarMapa(){
 	//de la lista al mapa
 
-	Mapa.pintarMapa("mapa", 15);
+	
+	Mapa.mapaLista("mapa", 15);
+
 
 	$("#btn_lista").removeClass("selected");
 	$("#btn_mapa").addClass("selected");
@@ -80,7 +82,7 @@ function cargarLista(){
 	//del mapa a la lista
 	$("#btn_lista").addClass("selected");
 	$("#btn_mapa").removeClass("selected");
-	$("#mapa").hide();
+	$("#mapa").html('');
 	$("#lista").show();
 }
 
