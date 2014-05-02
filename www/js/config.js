@@ -50,6 +50,7 @@ var Config = {
 		Config.set('idioma',$("#cfg_idioma").val());
 		Idioma.init(Config.get('idioma'));
 		Ficha.vaciar();
+		Lista.resetCarga();
 	});
 
 	$("#cfg_descuentos").attr('data-config', "descuentos");

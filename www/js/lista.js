@@ -43,6 +43,10 @@ var Lista = {
 
 	setCarga: function(){
 		Lista.ultimaCarga =  Math.round((new Date()).getTime() / 1000);
+	},
+
+	resetCarga: function(){
+		Lista.ultimaCarga = 0;
 	}
 
 
