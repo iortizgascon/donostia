@@ -13,9 +13,7 @@ h3{font-variant:small-caps;font-weight:normal;font-size:1em;margin:0}
 
 .salto{width:100%;clear:both;}
 
-#config{font-size:1.5em;text-align:center}
-.opcionesConfig{width:100%}
-.opcionesConfig li{text-align:left;margin:1em}
+
 
 
 
@@ -243,6 +241,13 @@ border-bottom-right-radius:0.5em;
 
 #config form{padding:3em 1em;clear:both;}
 
-#config {width:95%;margin:auto;box-shadow: 0px 0px 30px 0px #888888;padding-bottom:5em}
+#config{
+	font-size:1.3em;
+	background: linear-gradient(to right,#ffffff,#cccccc 3%, white 3%, #ffffff 97%, #cccccc 97%, #ffffff); 
+	padding-bottom:10em;
+	text-align:center
+}
 
 
+.opcionesConfig{width:100%}
+.opcionesConfig li{text-align:left;margin:2em}
