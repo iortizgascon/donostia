@@ -86,7 +86,7 @@ nav{
 
 
 
-#mode span {font-size:1.2em;display:inline;padding:0.5em;margin-top:0.5em;background-color:#ffffff;}
+#mode span {font-size:1em;display:inline;padding:0.5em;margin-top:0.5em;background-color:#ffffff;}
 #mode span.selected{background-color:#3388cc;color:#ffffff}
 
 #btn_lista{
