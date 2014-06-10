@@ -53,6 +53,9 @@ textarea{width:80%;height:10em}
 .si_no span.selected{background-color:#3388cc;color:#ffffff}
 
 input[type="button"], input[type="submit"]{width:80%;padding:0.5em;text-align:center;font-size:2em}
+
+input[type="text"]{width:100%;height:3em;border:1px solid #cccccc;border-radius:1em}
+
 .page{
 	width:100%;
 	display:none;

@@ -25,6 +25,8 @@ var Idioma = {
    textos:{
 	'ahora':{es:"Ahora",eu:"Orain",en:"Now", fr:"Maintenant"},
 	'cerca':{es:"Cerca",eu:"Hurbil",en:"Nearby", fr:"Proche"},
+	'musica':{es:"M&uacute;sica",eu:"Musika",en:"Music", fr:"Musique"},
+	'comer':{es:"Comer",eu:"Jan",en:"Eat", fr:"Manger"},
 	'lista':{es:"Lista",eu:"Zerrenda",en:"List",fr:"Liste"},
 	'mapa':{es:"Mapa",eu:"Mapa",en:"Map", fr:"Carte"},	
 	'guardar':{es:"Guardar",eu:"Gorde",en:"Save",fr:"Sauver"},

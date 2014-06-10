@@ -38,8 +38,10 @@ function db_no_existe(){
 function config_cargado(){
 		
 	Idioma.init(Config.get('idioma'));
-	actualizarBoton("ahora");
+	//actualizarBoton("ahora");
 	actualizarBoton("cerca");
+	actualizarBoton("comer");
+	actualizarBoton("musica");
 	$("header").show();
 		
 	if (PRIMERAVEZ){

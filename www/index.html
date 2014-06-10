@@ -29,8 +29,11 @@
 
   	<header>
 	
-	<img id="logo" src="img/logo.png" alt="Logo DSS" class="icon" data-href="#main" />
-	<img id="configBtn" src="img/config.png" alt="Logo DSS"  class="icon" data-href="#config"  />
+	<img id="logo" src="img/logo.png" alt="" class="icon" data-href="#main" />
+
+
+	<img id="configBtn" src="img/config.png" alt=""  class="icon" data-href="#config"  />
+	<img id="buscarBtn" src="img/search.png" alt="" class="icon" data-href="#buscar" />
 	
 	</header>
 
@@ -41,16 +44,21 @@
 
 		<nav>
 			<ul id="nav_main">
-				<li class="traducir" data-text="ahora" id="btn_ahora"></li>
 				<li class="traducir" data-text="cerca" id="btn_cerca"></li>
+				<li class="traducir" data-text="musica" id="btn_musica"></li>
+				<li class="traducir" data-text="comer" id="btn_comer"></li>
 			</ul>
 
-			<div id="mode">
-				 <span data-text="lista" id="btn_lista" class="selected traducir"></span><span id="btn_mapa" class="traducir" data-text="mapa"></span>
+			
+		<div id="mode">
+			 <span data-text="lista" id="btn_lista" class="selected traducir"></span><span id="btn_mapa" class="traducir" data-text="mapa"></span>
 			</div>
+			
 
 			<div class="salto">	</div>
 		</nav>
+
+
 	
 		<div id="lista_conn_error" class="traducir error_conn" data-text="noconn"></div>
 		<div id="lista"></div>
@@ -103,22 +111,28 @@
 		<span></span>
 		</div>
 
-		<br /><br /><br />
+		<br /><br />
 
-		<h2><span class="traducir" data-text="me_interesa"></span></h2>
+		<p class="logoConfig">
+			<img src="img/logo.jpg" alt="Donosti en Martxa" />
+		</p>
 
-		<ul class="opcionesConfig">
-			<li>
-			 <div class="si_no" id="cfg_descuentos"></div> <span class="traducir" data-text="descuentos"></span>
-			</li>
-			<li>
-			 <div class="si_no" id="cfg_restaurantes"></div> <span class="traducir" data-text="restaurantes"></span>
-			</li>
-			<li>			
-			 <div class="si_no" id="cfg_conciertos"></div> <span class="traducir" data-text="conciertos"></span>
-			</li>
-		</ul>
+		
+	</div>   
 
+
+    <!-- FIN PÁGINA CONFIG -->
+
+<!-- ********* PÁGINA BUSCAR -->
+
+
+	<div class="page" id="buscar">		
+		<br />
+		Buscar un lugar por el nombre:<br />
+		<input type="text" id="busqueda" value="" />
+
+		<div id="resultados_busqueda"></div>
+		
 	</div>   
 
 
@@ -133,6 +147,7 @@
 	<script type="text/javascript" src="js/mapa.js"></script>
 	<script type="text/javascript" src="js/init.js"></script>
 	<script type="text/javascript" src="js/lista.js"></script>
+	<script type="text/javascript" src="js/busqueda.js"></script>
 	<script type="text/javascript" src="js/ficha.js"></script>
  	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/idangerous.swiper-2.1.min.js"></script>

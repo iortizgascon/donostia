@@ -15,6 +15,10 @@ function init_main(){
 		$(this).hide();
 	});
 
+	$("#busqueda").keyup(function(){
+		Busqueda.buscar($(this).val());
+	});
+
 }
 
 function navigate(enlace){
@@ -53,6 +57,10 @@ function navigate(enlace){
 	if (enlace == "#config"){
 		cargarConfig();
 	}
+
+	if (enlace == "#buscar"){
+		Busqueda.reset();
+	}
 	
 	//si no...
 	showPage(capa);
@@ -85,7 +93,6 @@ function cargarLista(){
 	$("#mapa").html('');
 	$("#lista").show();
 }
-
 
 
 

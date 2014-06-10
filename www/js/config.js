@@ -1,6 +1,6 @@
 var Config = {
    
-    config:{idioma:'es',ahora:1,cerca:0,descuentos:1,restaurantes:1,conciertos:1},
+    config:{idioma:'es',cerca:0,musica:1,comer:1},
  
 
     cargar: function (callback) {
