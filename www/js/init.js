@@ -2,7 +2,7 @@ $(document).ready(function(){ init();});
 
 
 var IDMOVIL=1; //para pruebas
-var URL = "http://donostia.dinamowebs.com/app/";
+var URL = "http://donosti.enmartxa.net/app/";
 var PRIMERAVEZ=false;
 
 function init(){
