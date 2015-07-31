@@ -18,9 +18,10 @@ function ajax(comando, parametros, callback, callbackError){
 	
 	//añadir los parametros de configuración
 	objCfg = Config.getConfig();
-	for (var attrname in objCfg) { postData[attrname] = objCfg[attrname]; }
+	for (var attrname in objCfg) { postData[attrname] = objCfg[attrname]; $("#consola").append(attrname + ': ' + objCfg[attrname] + '<br />');}
 
 	postData.uuid=IDMOVIL;
+	$("#consola").append('uuid: ' + IDMOVIL + '<br />');
 
 
 	var jqxhr = $.ajax({
@@ -37,6 +38,8 @@ function ajax(comando, parametros, callback, callbackError){
 	  })
 	  .fail(function(jqXHR, textStatus, errorThrown) {
 		console.log(textStatus);
+		$("#consola").append('textStatus: ' + textStatus + '<br />');
+		$("#consola").append('errorThrown: ' + errorThrown + '<br />');
 		if (typeof callbackError != 'undefined')
 		    	callbackError();
 	  });
